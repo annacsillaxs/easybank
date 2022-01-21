@@ -1,13 +1,75 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	--cyan: hsl(192, 70%, 51%);
+	--lime: hsl(136, 65%, 51%);
+	--blue: hsl(233, 26%, 24%);
+	--gray: hsl(233, 8%, 62%);
+	--light-grayish: hsl(220, 16%, 96%);
+	--light-gray: hsl(0, 0%, 98%);
+	--white: hsl(0, 0%, 100%);
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.container {
+	@apply w-10/12 max-w-3xl mx-auto text-center;
+}
+
+.title {
+	@apply text-4xl text-blue font-light;
+}
+
+.section-title {
+	@apply text-2xl text-blue;
+}
+.section-text {
+	@apply text-base text-gray;
+}
+
+.card-title {
+	@apply text-xl text-blue;
+}
+.card-text {
+	@apply text-base text-gray font-light;
+}
+
+.article-title {
+	@apply text-lg text-blue font-normal cursor-pointer transition-colors hover:text-lime;
+}
+.article-text {
+	@apply text-sm text-gray font-light;
+}
+
+.btn {
+	@apply justify-self-center text-white text-sm tracking-wider font-bold py-2 px-8 rounded-full  border-2 bg-gradient-to-r from-lime to-cyan border-2 border-cyan transition-opacity duration-200 hover:opacity-70;
+}
+
+.nav-link {
+	@apply text-gray font-light text-base transition-colors duration-200 hover:text-blue bg-white pb-1  cursor-pointer  before:content-[''] relative;
+}
+
+.nav-link::before {
+	@apply absolute left-0 -bottom-6 right-0 h-1 bg-transparent;
+}
+
+.nav-link:hover.nav-link::before {
+	@apply bg-gradient-to-r from-lime to-cyan;
+}
+
+.footer-link {
+	@apply text-white font-light text-base transition-colors hover:text-lime;
+}
+
+.author {
+	@apply text-xs text-gray;
+}
+
+.gradient-bg {
+	@apply bg-gradient-to-r from-lime to-cyan pb-1;
+	display: inline;
+}
+
+.hero-img-section {
+	@apply bg-[url('./images/bg-intro-mobile.svg')] bg-no-repeat bg-left-top bg-contain;
 }
